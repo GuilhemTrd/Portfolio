@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Portfolio GuilhemTardy</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="images/icon.png" sizes="16x16">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="JavaScript" href="js/script.js">
+  
+
+</head>
+    <body id="body" class="light-mode">
+
+    <script>
+        function toggleDarkLight() {
+            var body = document.getElementById("body");
+            var currentClass = body.className;
+            body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+        }
+
+    </script>
+
+        <div class="ensemblePage">
+        <nav class="navbar navbar-expand-sm">
+                <div class="container">
+                <a href="#" class="navbar-brand">
+                    <div class="wrapper">
+                        <div class="typing-demo">
+                            Guilhem Tardy
+                        </div>
+                    </div>
+                </a>
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="" class="nav-link active">Profil</a></li>
+                    <li class="nav-item"><a href="" class="nav-link active">Projets</a></li>
+                    <!--<button type="button" class="btn btn-navbar" data-toggle="modal" data-target="#exampleModalScrollable">
+                        Contact
+                      </button>-->
+                    <button class="boutonDarkLight" type="button" id="dark_light" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">Mode Sombre</button>
+
+                </ul>
+                </div>
+            </div>
+        </nav>
+     
+        <div class="container-fluid banniere">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="titreCategorieColor">
+                        <h2>Contact</h2>
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i>ㅤ17 Chemin du Gorat 69690 Brussieu</p>
+                    <p><i class="fas fa-mobile-alt"></i>ㅤ06.79.75.08.42</p>
+                    <p><i class="far fa-envelope"></i>ㅤguilhem.trd@gmail.com</p>
+                    <p><i class="far fa-calendar"></i>ㅤJe suis né le 31 mai 2002</p>
+                </div>
+                <div class="col-lg-6">
+                    <img id="imgBanniere" src="images/img_section1.svg" class="imgBanniere" alt="">
+                </div>
+            </div>
+        </div>
+
+            <script>
+                const element = document.getElementById('dark_light');
+                var cpt = 0;
+                var img1 = document.createElement("img");
+                var img2 = document.createElement("img");
+                var img3 = document.createElement("img");
+                element.addEventListener("click", () => {
+                    if (cpt == 1){
+                        console.log("1");
+                        img1.src = "images/vagueTop0.png";
+                        img2.src = "images/vagueBottom0.png";
+                        img3.src = "images/vagueTop0.png";
+                        img1.className = img2.className = img3.className = 'vague' ;
+
+                        cpt = 0;
+                    }
+                    else{
+                        console.log("0");
+                        img1.src = "images/vagueTop1.png";
+                        img2.src = "images/vagueBottom1.png";
+                        img3.src = "images/vagueTop1.png";
+                        img1.className = img2.className = img3.className = 'vague' ;
+
+                        cpt = 1;
+                    }
+                    console.log('imgSrc : ' + img1.src);
+                    var block1 = document.getElementById("img1");
+                    block1.appendChild(img1);
+                    var block2 = document.getElementById("img2");
+                    block2.appendChild(img2);
+                    var block3 = document.getElementById("img3");
+                    block3.appendChild(img3);
+                });
+                window.addEventListener('load', function () {
+                    console.log("0");
+                    img1.src = "images/vagueTop0.png";
+                    img2.src = "images/vagueBottom0.png";
+                    img3.src = "images/vagueTop0.png";
+                    img1.className = img2.className = img3.className = 'vague' ;
+                    var block1 = document.getElementById("img1");
+                    block1.appendChild(img1);
+                    var block2 = document.getElementById("img2");
+                    block2.appendChild(img2);
+                    var block3 = document.getElementById("img3");
+                    block3.appendChild(img3);
+                })
+
+            </script>
+
+            <div id='img1' class="changeDarkLight"></div>
+
+
+    <div class="lightDark">
+        <div class="titreCategorieWhite">    
+            <h2>Parcours Scolaire</h2>
+        </div>
+        <div class="container containerCat">
+            <div class="row">
+                <div class="col-md-4 partiCategorie">
+                    <div class="parcours">
+                        <h4>Brevet des collèges</h4>
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                        <p style="font-style: italic">Collège Val d'Argent, St Foy L'argentière 69610</p>
+                        <h6>Admis mention Très Bien</h6>
+                        <p>2013-2017</p>
+                    </div>
+                </div>
+                <div class="col-md-4 partiCategorie">
+                    <div class="parcours">
+                        <h4>Bac STI2D SIN</h4>
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                        <p style="font-style: italic">La Plata, Tarare 69170</p>
+                        <h6>Admis mention Bien</h6>
+                        <p>2017-2020</p>
+                    </div>
+                </div>
+                <div class="col-md-4 partiCategorie">
+                    <div class="parcours">
+                        <h4>BTS SIO SLAM</h4>
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                        <p style="font-style: italic">La Martinière Duchère 69007</p>
+                        <h6>En cours d'admission (second année)</h6>
+                        <p>2020-???</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div id="img2"></div>
+
+    <div class="certification">
+        <div class="titreCategorieColor">    
+            <h2>Certification</h2>
+        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 cert cert1">
+                        <div class="imgCertif floatLeft">
+                            <img src="images/anssiMooc.png">
+                        </div>
+                        <div class="floatRight">
+                            <h3>Anssi Mooc</h3>
+                            <br>
+                            <p>Certification sur la CyberSécurité</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 cert cert2">
+                        <div class="imgCertif floatLeft">
+                            <img src="images/pix.png">
+                        </div>
+                        <div class="floatRight">
+                            <h3>Pix</h3>
+                            <p>Certification sur l'informatique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div id="img3"></div>
+
+    <div class="lightDark">
+        <div class="titreCategorieWhite">
+            <h2>Compétence</h2>
+        </div>
+
+        <div class="container competence">
+            <div class="row">
+                <div class="col-sm-4" style="float:none;margin:auto;">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front">
+                                <img src="images/css.svg">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50" style="height: 50%;">
+                                        <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>50%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front">
+                                <img src="images/word.png">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80" style="height: 80%;">
+                                        <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>80%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front">
+                                <img class="arduino" src="images/arduino.png">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60" style="height: 60%;">
+                                       <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>60%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front">
+                                <img src="images/html.svg">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 80%;">
+                                        <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>80%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front align-middle">
+                                <img class="sql" src="images/sql.png">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 75%;">
+                                        <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>75%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="content">
+                            <div class="front">
+                                <img src="images/python.png" width="auto">
+                            </div>
+                            <div class="back">
+                                  <div class="progress progress-bar-vertical">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 70%;">
+                                       <span class="sr-only"></span> 
+                                    </div> 
+                                  </div>
+                                  <h5>70%</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="footer">
+            <div class="icon contacter pull-right">
+                <div class="tooltip">Contacter</div>
+                <a href="mailto:guilhem.trd@gmail.com"><i class="fas fa-envelope"></i></a> <!--<a href="contact.html"><span></span>-->
+              </div>
+            <div class="icon linkedin pull-right">
+              <div class="tooltip">Linkedin</div>
+              <a href="https://www.Linkedin.com"><span><i class="fab fa-linkedin-in"></i></span></a>
+            </div>
+            <div class="icon twitter pull-right">
+              <div class="tooltip">Twitter</div>
+              <a href="https://www.twitter.com"><span><i class="fab fa-twitter"></i></span></a>
+            </div>
+            <div class="icon github pull-right">
+              <div class="tooltip">GitHub</div>
+              <a href="https://github.com/GuilhemTrd"><span><i class="fab fa-github"></i></span></a>
+            </div>
+        </div>
+
+        <!-- Bouton contact -->
+        <!--
+        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">Contacter Guilhem Tardy</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+        -->
+                    <!-- Formulaire -->
+            <!--
+                    <form>
+                        <div class="form-group">
+                            <label for="example-text-input">Nom</label>
+                            <input type="text" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Guilhem">
+                          </div>
+                          <div class="form-group">
+                            <label for="example-text-input">Prenom</label>
+                            <input type="text" class="form-control" id="prenom" aria-describedby="emailHelp" placeholder="Tardy">
+                          </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Adresse Email</label>
+                          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Adresse email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Texte</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Je demande à être recontacter</label>
+                        </div>
+                        <button type="button" class="btn btn-form">Envoyer</button>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-red" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
+            </div>
+             -->
+        </div>
+
+
+    </body>
+</html>
