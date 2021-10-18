@@ -42,6 +42,7 @@ a:active {
 .navbar{
     min-height: 60px;
     background-color: var(--couleur2-principal);
+    position: fixed;
 }
 
 .navbar a{
@@ -62,47 +63,16 @@ a:active {
     font-size: 25px;
     margin-left: 0;
 }
-
+.nav-item{
+    text-align: center;
+}
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,168,15)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
 
 .custom-toggler.navbar-toggler {
     border: 0;
-  } 
-
-.btn-navbar{
-    background-color: #fff;
-    color: var(--color-navbar);
-}
-
-.btn-navbar:hover{
-    color: #fff;
-    background-color: var(--color-navbar);
-}
-
-.btn-form{
-    background-color: var(--color-navbar);
-    color: #fff;
-    border: solid 3px var(--color-navbar);
-    margin-top: 10px;
-}
-
-.btn-form:hover{
-    color: var(--color-navbar);
-    background-color:#fff;
-}
-
-.btn-red{
-    background-color:#d10000;
-    color: #fff;
-    border: solid 3px #d10000;
-}
-
-.btn-red:hover{
-    color: #d10000;
-    background-color:#fff;
-}
+  }
 
 /*BANNIERE*/
 .banniere{
@@ -183,8 +153,14 @@ a:active {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    height: 400px;
+
+    transition: transform .2s;
 }
 
+.parcours:hover{
+    transform: scale(1.05);
+}
 
 .parcours h4, .parcours i, .parcours h6{
     padding: 15px 0;
@@ -204,15 +180,12 @@ a:active {
     background: white;
     padding: 20px;
     border-radius: 15px;
-    margin: 20px;
 }
-certification .col-md-6{
-}
-.certification .cert1{
-
-}
-.certification .cert2{
-
+.imgCertif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
 }
 .certification .cert img{
     width: 100px;
@@ -223,13 +196,11 @@ certification .col-md-6{
 }
 .certification .cert1 .floatRight, .certification .cert2 .floatRight{
     margin-left: 40%;
-    border: solid black 1px;
+    border-left: solid black 2px;
+    padding-left: 10px;
+    height: 120px;
 }
-.certification .cert1 p{
-    position: relative;
-    top: 50%;
-    transform: perspective(1px) translateY(-50%);
-}
+
 
 /*Compétences*/
 .card {
@@ -448,7 +419,6 @@ certification .col-md-6{
         width: 0
     }
 }
-
 @keyframes blink {
     50% {
         border-color: transparent
