@@ -149,7 +149,7 @@ a:active {
 .parcours{
     background-color: var(--gris);
     padding: 10px 20px;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
@@ -177,12 +177,14 @@ a:active {
     width: 100%;
 }
 .certification .cert{
+    display: flex;
     background: white;
     padding: 20px;
     border-radius: 15px;
+    margin-top: 20px;
+    height: 150px;
 }
 .imgCertif {
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 120px;
@@ -192,10 +194,10 @@ a:active {
 }
 .certification .cert1 .floatLeft, .certification .cert2 .floatLeft{
     float: left;
-    width: 40%;
+    width: 20%;
 }
 .certification .cert1 .floatRight, .certification .cert2 .floatRight{
-    margin-left: 40%;
+    margin-left: 20%;
     border-left: solid black 2px;
     padding-left: 10px;
     height: 120px;
