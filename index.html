@@ -25,58 +25,76 @@
 </head>
     <body id="body" class="light-mode">
 
-    <script>
-        function toggleDarkLight() {
-            var body = document.getElementById("body");
-            var currentClass = body.className;
-            body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
-        }
+        <script>
+            function toggleDarkLight() {
+                var body = document.getElementById("body");
+                var currentClass = body.className;
+                body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+            }
 
-    </script>
+            $(function()
+            {
+                $(".navbar a, footer a").on("click", function(event)
+                {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('body,html').animate({scrollTop: $(hash).offset().top} , 900 , function(){window.location.hash = hash;})
+                });
+            })
+
+            /*function test() {
+                alert("Oui");
+            }
+
+                window.addEventListener('load', function () {
+                    alert('oui');
+                });
+                */
+
+        </script>
 
         <div class="ensemblePage">
-        <nav class="navbar navbar-expand-sm">
-                <div class="container">
-                <a href="#" class="navbar-brand">
-                    <div class="wrapper">
-                        <div class="typing-demo">
-                            Guilhem Tardy
+            <nav class="navbar navbar-expand-lg fixed-top">
+                    <div class="container">
+                    <a href="#" class="navbar-brand">
+                        <div class="wrapper">
+                            <div class="typing-demo">
+                                Guilhem Tardy
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="" class="nav-link active">Profil</a></li>
-                    <li class="nav-item"><a href="" class="nav-link active">Projets</a></li>
-                    <!--<button type="button" class="btn btn-navbar" data-toggle="modal" data-target="#exampleModalScrollable">
-                        Contact
-                      </button>-->
-                    <button class="boutonDarkLight" type="button" id="dark_light" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">Mode Sombre</button>
+                    </a>
+                    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="#contact" class="nav-link active">Contact</a></li>
+                        <li class="nav-item"><a href="#parcours" class="nav-link active">Parcours Scolaire</a></li>
+                        <li class="nav-item"><a href="#certif" class="nav-link active">Certification</a></li>
+                        <li class="nav-item"><a href="#competence" class="nav-link active">Compétence</a></li>
+                        <button class="boutonDarkLight" type="button" id="dark_light" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">Mode Sombre</button>
 
-                </ul>
-                </div>
-            </div>
-        </nav>
-     
-        <div class="container-fluid banniere">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="titreCategorieColor">
-                        <h2>Contact</h2>
+                    </ul>
                     </div>
-                    <p><i class="fas fa-map-marker-alt"></i>ㅤ17 Chemin du Gorat 69690 Brussieu</p>
-                    <p><i class="fas fa-mobile-alt"></i>ㅤ06.79.75.08.42</p>
-                    <p><i class="far fa-envelope"></i>ㅤguilhem.trd@gmail.com</p>
-                    <p><i class="far fa-calendar"></i>ㅤJe suis né le 31 mai 2002</p>
                 </div>
-                <div class="col-lg-6">
-                    <img id="imgBanniere" src="images/img_section1.svg" class="imgBanniere" alt="">
+            </nav>
+     
+            <div class="container-fluid banniere" id="contact">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="titreCategorieColor">
+                            <h2>Contact</h2>
+                        </div>
+                        <p><i class="fas fa-map-marker-alt"></i>ㅤ17 Chemin du Gorat 69690 Brussieu</p>
+                        <p><i class="fas fa-mobile-alt"></i>ㅤ06.79.75.08.42</p>
+                        <p><i class="far fa-envelope"></i>ㅤguilhem.trd@gmail.com</p>
+                        <p><i class="far fa-calendar"></i>ㅤJe suis né le 31 mai 2002</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img id="imgBanniere" src="images/img_section1.svg" class="imgBanniere" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
 
             <script>
                 const element = document.getElementById('dark_light');
@@ -124,262 +142,213 @@
                     var block3 = document.getElementById("img3");
                     block3.appendChild(img3);
                 })
-
             </script>
+            <div id="parcours"></div>
+            <div id='img1'></div>
 
-            <div id='img1' class="changeDarkLight"></div>
-
-
-    <div class="lightDark">
-        <div class="titreCategorieWhite">    
-            <h2>Parcours Scolaire</h2>
-        </div>
-        <div class="container containerCat">
-            <div class="row">
-                <div class="col-md-4 partiCategorie">
-                    <div class="parcours">
-                        <h4>Brevet des collèges</h4>
-                        <i class="fas fa-graduation-cap fa-2x"></i>
-                        <p style="font-style: italic">Collège Val d'Argent, St Foy L'argentière 69610</p>
-                        <h6>Admis mention Très Bien</h6>
-                        <p>2013-2017</p>
-                    </div>
+            <div class="lightDark">
+                <div class="titreCategorieWhite">
+                    <h2>Parcours Scolaire</h2>
                 </div>
-                <div class="col-md-4 partiCategorie">
-                    <div class="parcours">
-                        <h4>Bac STI2D SIN</h4>
-                        <i class="fas fa-graduation-cap fa-2x"></i>
-                        <p style="font-style: italic">La Plata, Tarare 69170</p>
-                        <h6>Admis mention Bien</h6>
-                        <p>2017-2020</p>
-                    </div>
-                </div>
-                <div class="col-md-4 partiCategorie">
-                    <div class="parcours">
-                        <h4>BTS SIO SLAM</h4>
-                        <i class="fas fa-graduation-cap fa-2x"></i>
-                        <p style="font-style: italic">La Martinière Duchère 69007</p>
-                        <h6>En cours d'admission (second année)</h6>
-                        <p>2020-???</p>
+                <div class="container containerCat">
+                    <div class="row">
+                        <div class="col-md-4 partiCategorie">
+                            <div class="parcours parcours1">
+                                <h4>Brevet des collèges</h4>
+                                <i class="fas fa-graduation-cap fa-2x"></i>
+                                <p style="font-style: italic">Collège Val d'Argent, St Foy L'argentière 69610</p>
+                                <h6>Admis mention Très Bien</h6>
+                                <p>2013-2017</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 partiCategorie">
+                            <div class="parcours parcours2">
+                                <h4>Bac STI2D SIN</h4>
+                                <i class="fas fa-graduation-cap fa-2x"></i>
+                                <p style="font-style: italic">La Plata, Tarare 69170</p>
+                                <h6>Admis mention Bien</h6>
+                                <p>2017-2020</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 partiCategorie">
+                            <div class="parcours parcours3">
+                                <h4>BTS SIO SLAM</h4>
+                                <i class="fas fa-graduation-cap fa-2x"></i>
+                                <p style="font-style: italic">La Martinière Duchère 69007</p>
+                                <h6>En cours d'admission (second année)</h6>
+                                <p>2020-???</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <div id="certif"></div>
             <div id="img2"></div>
 
-    <div class="certification">
-        <div class="titreCategorieColor">    
-            <h2>Certification</h2>
+            <div class="certification">
+                <div class="titreCategorieColor">
+                    <h2>Certification</h2>
+                </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 cert cert1">
+                                <div class="imgCertif floatLeft">
+                                    <img src="images/anssiMooc.png">
+                                </div>
+                                <div class="floatRight">
+                                    <h3>Anssi Mooc</h3>
+                                    <p>Certification sur la CyberSécurité</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cert cert2">
+                                <div class="imgCertif floatLeft">
+                                    <img src="images/pix.png">
+                                </div>
+                                <div class="floatRight">
+                                    <h3>Pix</h3>
+                                    <p>Certification sur l'informatique</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="img3"></div>
+
+                <div class="lightDark">
+                    <div class="titreCategorieWhite" id="competence">
+                        <h2>Compétence</h2>
+                    </div>
+
+                    <div class="container competence">
+                        <div class="row">
+                            <div class="col-sm-4" style="float:none;margin:auto;">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front">
+                                            <img src="images/css.svg">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 50%;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>50%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front">
+                                            <img src="images/php.png">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65" style="height: 65%;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>60%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front">
+                                            <img src="images/laravel.png">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 30%;">
+                                                   <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>30%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front">
+                                            <img src="images/html.svg">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 80%;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>80%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front align-middle">
+                                            <img class="sql" src="images/sql.png">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 75%;">
+                                                    <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>75%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                    <div class="content">
+                                        <div class="front">
+                                            <img src="images/python.png" width="auto">
+                                        </div>
+                                        <div class="back">
+                                              <div class="progress progress-bar-vertical">
+                                                <div class="progress-bar active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 70%;">
+                                                   <span class="sr-only"></span>
+                                                </div>
+                                              </div>
+                                              <h5>70%</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="icon contacter pull-right">
+                        <div class="tooltip">Contacter</div>
+                        <a href="mailto:guilhem.trd@gmail.com"><i class="fas fa-envelope"></i></a> <!--<a href="contact.html"><span></span>-->
+                      </div>
+                    <div class="icon linkedin pull-right">
+                      <div class="tooltip">Linkedin</div>
+                      <a href="https://www.Linkedin.com"><span><i class="fab fa-linkedin-in"></i></span></a>
+                    </div>
+                    <div class="icon twitter pull-right">
+                      <div class="tooltip">Twitter</div>
+                      <a href="https://www.twitter.com"><span><i class="fab fa-twitter"></i></span></a>
+                    </div>
+                    <div class="icon github pull-right">
+                      <div class="tooltip">GitHub</div>
+                      <a href="https://github.com/GuilhemTrd"><span><i class="fab fa-github"></i></span></a>
+                    </div>
+                </div>
         </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 cert cert1">
-                        <div class="imgCertif floatLeft">
-                            <img src="images/anssiMooc.png">
-                        </div>
-                        <div class="floatRight">
-                            <h3>Anssi Mooc</h3>
-                            <br>
-                            <p>Certification sur la CyberSécurité</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 cert cert2">
-                        <div class="imgCertif floatLeft">
-                            <img src="images/pix.png">
-                        </div>
-                        <div class="floatRight">
-                            <h3>Pix</h3>
-                            <p>Certification sur l'informatique</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            <div id="img3"></div>
-
-    <div class="lightDark">
-        <div class="titreCategorieWhite">
-            <h2>Compétence</h2>
-        </div>
-
-        <div class="container competence">
-            <div class="row">
-                <div class="col-sm-4" style="float:none;margin:auto;">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img src="images/css.svg">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50" style="height: 50%;">
-                                        <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>50%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img src="images/word.png">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80" style="height: 80%;">
-                                        <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>80%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img class="arduino" src="images/arduino.png">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60" style="height: 60%;">
-                                       <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>60%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img src="images/html.svg">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="height: 80%;">
-                                        <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>80%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front align-middle">
-                                <img class="sql" src="images/sql.png">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 75%;">
-                                        <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>75%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="card">
-                        <div class="content">
-                            <div class="front">
-                                <img src="images/python.png" width="auto">
-                            </div>
-                            <div class="back">
-                                  <div class="progress progress-bar-vertical">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="height: 70%;">
-                                       <span class="sr-only"></span> 
-                                    </div> 
-                                  </div>
-                                  <h5>70%</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <div class="footer">
-            <div class="icon contacter pull-right">
-                <div class="tooltip">Contacter</div>
-                <a href="mailto:guilhem.trd@gmail.com"><i class="fas fa-envelope"></i></a> <!--<a href="contact.html"><span></span>-->
-              </div>
-            <div class="icon linkedin pull-right">
-              <div class="tooltip">Linkedin</div>
-              <a href="https://www.Linkedin.com"><span><i class="fab fa-linkedin-in"></i></span></a>
-            </div>
-            <div class="icon twitter pull-right">
-              <div class="tooltip">Twitter</div>
-              <a href="https://www.twitter.com"><span><i class="fab fa-twitter"></i></span></a>
-            </div>
-            <div class="icon github pull-right">
-              <div class="tooltip">GitHub</div>
-              <a href="https://github.com/GuilhemTrd"><span><i class="fab fa-github"></i></span></a>
-            </div>
-        </div>
-
-        <!-- Bouton contact -->
-        <!--
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalScrollableTitle">Contacter Guilhem Tardy</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-        -->
-                    <!-- Formulaire -->
-            <!--
-                    <form>
-                        <div class="form-group">
-                            <label for="example-text-input">Nom</label>
-                            <input type="text" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Guilhem">
-                          </div>
-                          <div class="form-group">
-                            <label for="example-text-input">Prenom</label>
-                            <input type="text" class="form-control" id="prenom" aria-describedby="emailHelp" placeholder="Tardy">
-                          </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Adresse Email</label>
-                          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Adresse email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Texte</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          </div>
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                          <label class="form-check-label" for="exampleCheck1">Je demande à être recontacter</label>
-                        </div>
-                        <button type="button" class="btn btn-form">Envoyer</button>
-                      </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-red" data-dismiss="modal">Fermer</button>
-                </div>
-              </div>
-            </div>
-             -->
-        </div>
-
-
     </body>
 </html>
