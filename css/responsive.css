@@ -1,5 +1,11 @@
 @media screen and (max-width: 767px) {
     .banniere p{
       font-size: 20px;
+   }
+}
+
+@media screen and (max-width: 530px) {
+    .banniere .imgBanniere{
+        min-width: 300px;
     }
-  }
+}
